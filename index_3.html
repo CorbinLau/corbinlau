@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+<title>linglingswimschool</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./style/w3.css">
+<link rel="stylesheet" href="./style/w3-theme-blue.css">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .mySlides {display:none;}
+</style>
+<style>
+    /* Popup container - can be anything you want */
+    .popup {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* The actual popup */
+    .popup .popuptext {
+        visibility: hidden;
+        width: 160px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -80px;
+    }
+
+    /* Popup arrow */
+    .popup .popuptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+
+    /* Toggle this class - hide and show the popup */
+    .popup .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+    }
+
+    /* Add animation (fade in the popup) */
+    @-webkit-keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity:1 ;}
+    }
+</style>
+<body id="myPage">
+
+<!-- Sidebar on click -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-card-2 w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+        <i class="fa fa-remove"></i>
+    </a>
+    <a class="w3-bar-item w3-button">通知 1</a>
+    <a class="w3-bar-item w3-button">通知 2</a>
+</nav>
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-theme-d2 w3-left-align">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Logo</a>
+        <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
+
+        <a href="#reward" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Rewards</a>
+        <a href="#reward" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Teach</a>
+
+        <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Location</a>
+        <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Price</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+
+        <a href="#faq" class="w3-bar-item w3-button w3-hide-small w3-hover-white">FAQ</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+        <a href="#team" class="w3-bar-item w3-button">Team</a>
+        <a href="#reward" class="w3-bar-item w3-button">Rewards</a>
+        <a href="#teach" class="w3-bar-item w3-button">Teach</a>
+        <a href="#work" class="w3-bar-item w3-button">Location</a>
+
+        <a href="#pricing" class="w3-bar-item w3-button">Price</a>
+        <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+        <a href="#faq" class="w3-bar-item w3-button">FAQ</a>
+
+        <a href="#" class="w3-bar-item w3-button">Search</a>
+    </div>
+</div>
+
+<!-- Image Header -->
+<div class="w3-display-container w3-animate-opacity">
+    <img src="./images/Mainpage.jpg" alt="kids" style="width:100%;min-height:400px;max-height:600px;">
+    <div class="w3-container w3-display-bottomleft w3-margin-bottom">
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">Ling Ling Swim School</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+        <header class="w3-container w3-teal w3-display-container">
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+            <h4>Ling Ling Swim School</h4>
+
+        </header>
+        <div class="w3-container">
+
+            <p>玲玲游泳学校创办于2002年的10月18日，是当时全悉尼唯一一所由中国人一手创办的游泳学校，并且是澳洲游泳协会承认的优秀游泳学校之一。曾被“今日悉尼”等大型传媒采访并报道。十多年间，玲玲游泳学校走过了一段艰辛的路程，它从初期的两个教练员到现在的近三十个教练员，学员数量扩大至近八百人，学员年龄层覆盖三岁到六十岁，从仅有一条泳道到现在的五个校区，家长、学员及教练一同见证了玲玲游泳学校的成长。</p>
+            玲玲游泳学校所有的教练员都是前中国国家游泳队或地方队的专业游泳运动员，他们用他们丰富的经验和热忱的态度，满怀爱心地培育着孩子们。
+            所有学员都在25米正规游泳池内进行游泳训练。我们分配学员的标准是依照个人游泳水平的高低来定。因为我们学校有6个不同的游泳程度考试，每个孩子通过考试以后就可以升上一个更高的阶段。 玲玲游泳学校是唯一一所坚持以一个小时为课时的游泳学校，它结合了澳洲欢快有趣的教育方式，和中国严格认真的风格，在一个小时的课时里两者完美的共同体现出来，此种特殊的方式也使得很多学生能够得到飞快的提高和进步。
+        </div>
+    </div>
+</div>
+
+<footer class="w3-container w3-teal">
+</footer>
+
+<!-- Container -->
+<div class="w3-container" style="position:relative">
+    <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
+       style="position:absolute;top:-28px;right:24px"><i class="fa fa-feed"></i></a>
+</div>
+
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+    <h2>OUR TEAM</h2>
+    <h3>经验丰富的专业教练员们</h3>
+
+    <div class="w3-row"><br>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Daisy.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t01').style.display='block'">
+
+
+            <!-- Modal -->
+            <div id="t01" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Daisy</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Daisy.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>原中国国家游泳队运动员，上海队运动员。教龄长达20年，于2002年创办唯一一家由中国人主理的游泳学校，所教授的学生多达1000多人。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Daisy</h3>
+            <p>Chief Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Mimi.JPG" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Mimi</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Rebecca.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Rebecca</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Jiaqi.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Jiaqi</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Ben.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Ben</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Jayden.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Jayden</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Jack.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Jack</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Melissa.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Melissa</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Kevin.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Kevin</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Chapman.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Chapman</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Joe.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Joe</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Gavin.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Gavin</h3>
+            <p>Head Coach</p>
+        </div>
+
+    </div>
+</div>
+
+    <div class="w3-container w3-row w3-padding-64 w3-theme-l1 " id="reward">
+    <div class="w3-half w3-container w3-center">
+        <h2>Rewards</h2>
+        <!-- Image slide -->
+        <div class="w3-content w3-display-container">
+            <img class="rSlides" src="./images/reward/1.JPG" style="width:50%; margin-left:25%">
+            <img class="rSlides" src="./images/reward/2.JPG" style="width:50%; margin-left:25%">
+
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivsR(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivsR(1)">&#10095;</button>
+        </div>
+
+        <script>
+            var slideIndex = 1;
+            showDivsR(slideIndex);
+
+            function plusDivsR(n) {
+                showDivsR(slideIndex += n);
+            }
+
+            function showDivsR(n) {
+                var i;
+                var x = document.getElementsByClassName("rSlides");
+                if (n > x.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = x.length}
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[slideIndex-1].style.display = "block";
+            }
+        </script>
+    </div>
+    <div class="w3-half w3-container w3-center">
+        <h2>Teach</h2>
+        <!-- Image slide -->
+        <div class="w3-content w3-display-container">
+            <img class="tSlides" src="./images/style/1.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/2.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/3.jpg" style="width:100%">
+
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                var x = document.getElementsByClassName("tSlides");
+                if (n > x.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = x.length}
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[slideIndex-1].style.display = "block";
+            }
+        </script>
+    </div>
+    </div>
+
+<!-- Location Row -->
+<div class="w3-container w3-padding-64 w3-theme-l5 w3-center" id="work">
+    <h2>Location</h2>
+    <div class="w3-row">
+        <div class="w3-third">
+            <div class="w3-card-2 w3-white">
+                <img src="images/location/Birrong.jpg" alt="Birrong" style="width:100%;padding-bottom: 10%">
+                <div class="w3-container">
+                    <h4>Birrong Leisure Centre</h4>
+                    <p>Wellington Rd, Birrong NSW 2143</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="w3-third">
+            <div class="w3-card-2 w3-white">
+                <img src="images/location/Bexley.JPG" alt="Bexley" style="width:100%;padding-bottom: 10%">
+                <div class="w3-container">
+                    <h4>Bexley Aquatic Centre</h4>
+                    <p>98C Preddys Rd, Bexley North NSW 2207</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="w3-third">
+            <div class="w3-card-2 w3-white">
+                <img src="images/location/Hurstville.jpg" alt="Hurstville" style="width:100%">
+                <div class="w3-container">
+                    <h4>Hurstville Aquatic Centre</h4>
+                    <p>King Georges Rd & Forest Rd, Penshurst NSW 2222</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w3-row">
+        <div class="w3-half">
+            <div class="w3-card-2 w3-white">
+                <img src="images/location/Lane.jpg" alt="Lane" style="width:100%; padding-bottom:8%">
+                <div class="w3-container">
+                    <h4>Lane Cove Aquatic Leisure Centre</h4>
+                    <p>2 Little St, Lane Cove NSW 2066</p>
+                </div>
+            </div>
+        </div>
+        <div class="w3-half">
+            <div class="w3-card-2 w3-white">
+                <img src="images/location/Sydney.jpg" alt="Sydney" style="width:100%">
+                <div class="w3-container">
+                    <h4>Sydney Olympic Park Aquatic Centre</h4>
+                    <p>Olympic Blvd, Sydney Olympic Park NSW 2127</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Pricing Row -->
+
+<div class="w3-row-padding w3-center w3-padding-64" id="pricing">
+    <h2>PRICING</h2>
+    <p>每学期10堂课 学费及门票详情如下:</p><br>
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Birrong Leisure Centre</p>
+            </li>
+            <li class="w3-padding-16"><b>$290</b> ／学期</li>
+            <li class="w3-padding-16"><b>Free </b> Parking</li>
+            <li class="w3-padding-16"><b>门票：</b> 免学生及一位家长</li>
+            <li class="w3-padding-16"><b>试课需 支付一节课 </b> 门票自理</li>
+            <li class="w3-padding-16">
+                <h2 class="w3-wide"><i class="fa fa-usd"></i> 29</h2>
+                <span class="w3-opacity">每节</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme-l2">
+                <p class="w3-xlarge">Bexley Aquatic Centre</p>
+            </li>
+            <li class="w3-padding-16"><b>$260</b> ／学期</li>
+            <li class="w3-padding-16"><b>Free</b> Parking</li>
+            <li class="w3-padding-16"><b>门票：</b> $96/20次(家长免费)</li>
+            <li class="w3-padding-16"><b>试课需支付一节课 </b> 门票自理</li>
+            <li class="w3-padding-16">
+                <h2 class="w3-wide"><i class="fa fa-usd"></i> 26</h2>
+                <span class="w3-opacity">每节</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Hurstville Aquatic Centre</p>
+            </li>
+            <li class="w3-padding-16"><b>$260</b> ／学期</li>
+            <li class="w3-padding-16"><b>Free</b> Parking</li>
+            <li class="w3-padding-16"><b>门票：</b> $110/20次（家长免费）</li>
+            <li class="w3-padding-16"><b>试课需支付一节课</b> 门票自理</li>
+            <li class="w3-padding-16">
+                <h2 class="w3-wide"><i class="fa fa-usd"></i> 26</h2>
+                <span class="w3-opacity">每节</span>
+            </li>
+        </ul>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Lane Cove</p>
+            </li>
+            <li class="w3-padding-16"><b>$260</b> ／学期</li>
+            <li class="w3-padding-16"><b>Free</b> Parking</li>
+            <li class="w3-padding-16"><b>门票：</b> $115/20次（家长免费）</li>
+            <li class="w3-padding-16"><b>试课需支付一节课</b> 门票自理</li>
+            <li class="w3-padding-16">
+                <h2 class="w3-wide"><i class="fa fa-usd"></i> 26</h2>
+                <span class="w3-opacity">每节</span>
+            </li>
+        </ul>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Olympic Park Aquatic Center</p>
+            </li>
+            <li class="w3-padding-16"><b>$250</b> ／学期</li>
+            <li class="w3-padding-16"><b>4h Free</b> Parking</li>
+            <li class="w3-padding-16"><b>门票：</b> $4/人</li>
+            <li class="w3-padding-16"><b>试课需支付一节课</b> 门票自理</li>
+            <li class="w3-padding-16">
+                <h2 class="w3-wide"><i class="fa fa-usd"></i> 25</h2>
+                <span class="w3-opacity">每节</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--FAQ Container-->
+<div class="w3-row-padding w3-center w3-padding-64 w3-theme-l5" id="faq">
+    <h2>Q & A</h2>
+    <p>Search for a name in the input field.</p>
+
+    <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="myInput" onkeyup="myFunction()">
+
+    <table class="w3-table-all w3-margin-top" id="myTable">
+        <tr>
+            <th style="width:100%;">Question</th>
+        </tr>
+        <tr>
+            <td onclick="document.getElementById('q01').style.display='block'" class="w3-hover-grey">Q：什么年龄段最适合开始游泳培训？</td>
+            <!-- Modal -->
+            <div id="q01" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：什么年龄段最适合开始游泳培训？</h4>
+
+                    </header>
+                    <div class="w3-container">
+
+                        <p>A：2岁半到3岁开始游泳培训比较适合，因为这个时候的小朋友基本明白了大人的指示并能够进行基本对话，
+                            所以会对教练的指示和动作进行反馈并加以模仿。
+                            另外这个年龄阶段的小朋友还没有真正意义上对水产生惧怕，但随着小朋友年龄的增长，这种恐惧心理会随之增加。</p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <td onclick="document.getElementById('q02').style.display='block'" class="w3-hover-grey">Q：作为家长什么时候带领小朋友下水最好？</td>
+            <!-- Modal -->
+            <div id="q02" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q02').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：作为家长什么时候带领小朋友下水最好？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>A：最好的时间段就是小朋友学习走路的阶段，那个时候的小朋友比较活泼，喜欢走动，在水中走动阻力相对大于陆地，这样一方面增进小朋友与水的交流，使其不惧怕水；另一方面增加小朋友腿力，让其尽快学会走路。</p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <td onclick="document.getElementById('q03').style.display='block'" class="w3-hover-grey">Q：游泳前进餐需注意什么？</td>
+            <!-- Modal -->
+            <div id="q03" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q03').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：游泳前进餐需注意什么？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：游泳前半小时不可以吃产气及不易消化的食物，如米饭，牛奶等；前几种情况都会引起小朋友的呕吐及不舒适，建议在游泳前吃面条/面包等易消化食物，且不可吃得过饱。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <td onclick="document.getElementById('q04').style.display='block'" class="w3-hover-grey">Q：从什么游泳姿势开始教？</td>
+            <!-- Modal -->
+            <div id="q04" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q04').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：从什么游泳姿势开始教？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A: 澳大利亚游泳从自由泳和仰泳的交替开始教课，因为自由泳和仰泳的水上姿势是最接近人体在水中的放松平衡状态，这样的教课方式可使小朋友以最放松的状态从学习水中吐气开始。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <td onclick="document.getElementById('q05').style.display='block'" class="w3-hover-grey">Q：需要带些什么物品来上课？
+            </td>
+            <!-- Modal -->
+            <div id="q05" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q05').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：需要带些什么物品来上课？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：泳衣、洗浴用品、泳镜、泳帽（对于第一次报名付完整个学期学费的小朋友赠送印有lingling swim school logo的Speedo泳帽一个）。                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <td onclick="document.getElementById('q06').style.display='block'" class="w3-hover-grey">Q：耳朵进水怎么办？</td>
+            <!-- Modal -->
+            <div id="q06" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q06').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：耳朵进水怎么办？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：耳朵进水是游泳中的常见问题，可持续用手掌压迫耳屏或用手指牵拉耳廓，或反复做张口动作，使得外耳道上下左右不停活动或改变水屏障稳定性和压力的平稳，使水向外从外耳道流出。或者简单的单脚跳跃，使有水进入的那边耳朵的水直接流出。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <td onclick="document.getElementById('q07').style.display='block'" class="w3-hover-grey">Q：上课时间可以更改吗？上课地点可以中途更改吗？</td>
+            <!-- Modal -->
+            <div id="q07" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q07').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：上课时间可以更改吗？上课地点可以中途更改吗？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：上课地点及时间不可随意更改，但是补课或者特殊情况下可以有所变动，需提前告知。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <td onclick="document.getElementById('q08').style.display='block'" class="w3-hover-grey">Q：怎样报名？</td>
+            <!-- Modal -->
+            <div id="q08" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q08').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：怎样报名？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：首次报名的学员，请在报名页面填写您或孩子的相关资料，然后通过银行账户支付第一堂课的费用（手机银行app中，选择电话号码转账，0415580183），然后我们校长会第一时间与您联系。（附上报名链接）
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+    </table>
+</div>
+
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+</div>
+<!-- Contact Container -->
+<div class="w3-container w3-padding-64 w3-theme-l4" id="contact">
+    <div class="w3-row">
+        <div class="w3-col m5">
+            <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact or Register</span></div>
+            <h3>校长联系方式</h3>
+            <p>Daisy Xie</p>
+            <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>   Sydney, Australia</p>
+            <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +61 415580183</p>
+            <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i> deling_linda@hotmail.com</p>
+            <p class="popup" onclick="myFunction()"><i class="fa fa-weixin w3-text-teal w3-xlarge " > </i> xxxxxxxxs OR Click
+                <span class="popuptext" id="myPopup"><img src="./images/weixin.png" style="width:100%"></span></p>
+
+            <script>
+                // When the user clicks on div, open the popup
+                function myFunction() {
+                    var popup = document.getElementById("myPopup");
+                    popup.classList.toggle("show");
+                }
+            </script>
+            <br>
+            <img src="./images/微信二维码.png" alt="Barcode" style="width:20%" class="w3-square">
+
+        </div>
+        <div class="w3-col m7">
+            <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
+                <div class="w3-section">
+                    <label>学员姓名</label>
+                    <input class="w3-input" type="text" name="Name" required>
+                </div>
+                <div class="w3-section">
+                    <label>家长姓名</label>
+                    <input class="w3-input" type="text" name="pName" required>
+                </div>
+                <div class="w3-section">
+                    <label>家长电话</label>
+                    <input class="w3-input" type="text" name="pPhone" required>
+                </div>
+                <div class="w3-section">
+                    <label>微信</label>
+                    <input class="w3-input" type="text" name="Weixin" required>
+                </div>
+                <div class="w3-section">
+                    <label>校区选择</label><br>
+
+                    <label>Birrong</label>
+                    <input class="w3-check" type="checkbox" >
+
+                    <label>Bexley</label>
+                    <input class="w3-check" type="checkbox" >
+
+                    <label>Hurstville</label>
+                    <input class="w3-check" type="checkbox" >
+
+                    <label>Olympic</label>
+                    <input class="w3-check" type="checkbox" >
+
+                    <label>Lane Cove</label>
+                    <input class="w3-check" type="checkbox" >
+                </div>
+
+                <button type="submit" class="w3-button w3-left w3-theme">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Google Maps -->
+<!--<div id="googleMap" style="width:100%;height:420px;"></div>-->
+<!--<script>-->
+    <!--function myMap()-->
+    <!--{-->
+        <!--myCenter=new google.maps.LatLng(41.878114, -87.629798);-->
+        <!--var mapOptions= {-->
+            <!--center:myCenter,-->
+            <!--zoom:12, scrollwheel: false, draggable: false,-->
+            <!--mapTypeId:google.maps.MapTypeId.ROADMAP-->
+        <!--};-->
+        <!--var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);-->
+
+        <!--var marker = new google.maps.Marker({-->
+            <!--position: myCenter,-->
+        <!--});-->
+        <!--marker.setMap(map);-->
+    <!--}-->
+<!--</script>-->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>-->
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+    <h4>Follow Us</h4>
+    <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+    <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+    <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+    <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+    <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">LING LING SWIM SCHOOL</a></p>
+
+    <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+        <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
+        <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+    </div>
+</footer>
+
+<script>
+    // Script for side navigation
+    function w3_open() {
+        var x = document.getElementById("mySidebar");
+        x.style.width = "300px";
+        x.style.paddingTop = "10%";
+        x.style.display = "block";
+    }
+
+    // Close side navigation
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+
+    // Used to toggle the menu on smaller screens when clicking on the menu button
+    function openNav() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+
+</script>
+
+</body>
+</html>
