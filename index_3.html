@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html>
+<title>linglingswimschool</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./style/w3.css">
+<link rel="stylesheet" href="./style/w3-theme-blue.css">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .mySlides {display:none;}
+    h3:hover{text-decoration: underline;}
+</style>
+<style>
+    /* Popup container - can be anything you want */
+    .popup {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* The actual popup */
+    .popup .popuptext {
+        visibility: hidden;
+        width: 160px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -80px;
+    }
+
+    /* Popup arrow */
+    .popup .popuptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+
+    /* Toggle this class - hide and show the popup */
+    .popup .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+    }
+
+    /* Add animation (fade in the popup) */
+    @-webkit-keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity:1 ;}
+    }
+</style>
+<body id="myPage">
+
+<!-- Sidebar on click -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-card-2 w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+        <i class="fa fa-remove"></i>
+    </a>
+    <a class="w3-bar-item w3-button">通知 1</a>
+    <a class="w3-bar-item w3-button">通知 2</a>
+</nav>
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-theme-d2 w3-left-align">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Logo</a>
+        <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Our Team</a>
+
+        <a href="#reward" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Rewards</a>
+        <a href="#reward" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Teaching</a>
+
+        <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Location</a>
+        <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pricing</a>
+
+        <a href="#interview" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Interview</a>
+
+        <a href="#Program" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Program</a>
+
+        <a href="#faq" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Q & A</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact & Enroll</a>
+
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+        <a href="#team" class="w3-bar-item w3-button">Our Team</a>
+        <a href="#reward" class="w3-bar-item w3-button">Rewards & Teaching</a>
+        <a href="#work" class="w3-bar-item w3-button">Location</a>
+
+        <a href="#pricing" class="w3-bar-item w3-button">Pricing</a>
+        <a href="#interview" class="w3-bar-item w3-button">Interview</a>
+
+        <a href="#Program" class="w3-bar-item w3-button">Program</a>
+
+        <a href="#faq" class="w3-bar-item w3-button">Q & A</a>
+        <a href="#contact" class="w3-bar-item w3-button">Contact & Enroll</a>
+
+        <a href="#" class="w3-bar-item w3-button">Search</a>
+    </div>
+</div>
+
+<!-- Image Header -->
+<div class="w3-display-container w3-animate-opacity">
+    <img class="fSlides" src="./images/Mainpage.jpg" alt="kids" style="width:100%;min-height:400px;max-height:600px;">
+    <img class="fSlides" src="./images/Lane-Cove-Aquatic.jpg" alt="kids" style="width:100%;min-height:400px;max-height:600px;">
+    <div class="w3-container w3-display-bottomleft w3-margin-bottom">
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">Ling Ling Swim School</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+        <header class="w3-container w3-teal w3-display-container">
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+            <h4>Ling Ling Swim School</h4>
+
+        </header>
+        <div class="w3-container">
+
+            <p>玲玲游泳学校创办于2002年的10月18日，是当时全悉尼唯一一所由中国人一手创办的游泳学校，并且是澳洲游泳协会承认的优秀游泳学校之一。曾被“今日悉尼”等大型传媒采访并报道。十多年间，玲玲游泳学校走过了一段艰辛的路程，它从初期的两个教练员到现在的近三十个教练员，学员数量扩大至近八百人，学员年龄层覆盖三岁到六十岁，从仅有一条泳道到现在的五个校区，家长、学员及教练一同见证了玲玲游泳学校的成长。</p>
+            玲玲游泳学校所有的教练员都是前中国国家游泳队或地方队的专业游泳运动员，他们用他们丰富的经验和热忱的态度，满怀爱心地培育着孩子们。
+            所有学员都在25米正规游泳池内进行游泳训练。我们分配学员的标准是依照个人游泳水平的高低来定。因为我们学校有6个不同的游泳程度考试，每个孩子通过考试以后就可以升上一个更高的阶段。 玲玲游泳学校是唯一一所坚持以一个小时为课时的游泳学校，它结合了澳洲欢快有趣的教育方式，和中国严格认真的风格，在一个小时的课时里两者完美的共同体现出来，此种特殊的方式也使得很多学生能够得到飞快的提高和进步。
+        </div>
+    </div>
+</div>
+
+<footer class="w3-container w3-teal">
+</footer>
+
+<!-- Container -->
+<div class="w3-container" style="position:relative">
+    <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
+       style="position:absolute;top:-28px;right:24px"><i class="fa fa-feed"></i></a>
+</div>
+
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+    <h2>OUR TEAM</h2>
+    <h3>经验丰富的专业教练员们</h3>
+
+    <div class="w3-row"><br>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Daisy.jpg" alt="Boss" style="width:30%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t01').style.display='block'">
+
+
+            <!-- Modal -->
+            <div id="t01" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+
+                        <h3>Daisy</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-col w3-container l3 m3 s3">
+                                <img src="./images/coach/Daisy.jpg" alt="Boss" style="width:100%">
+                            </div>
+                            <div class="w3-col w3-container l9 m9 s9">
+                                <p>原中国国家游泳队运动员，上海队运动员。教龄长达20年，于2002年创办唯一一家由中国人主理的游泳学校，所教授的学生多达1000多人。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3 onclick="document.getElementById('t01').style.display='block'">Daisy</h3>
+            <p>Chief Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Mimi.JPG" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t02').style.display='block'">
+
+
+            <!-- Modal -->
+            <div id="t02" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t02').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Mimi</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Mimi.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>玲玲游泳学校元老之一，原上海体育学院教师，专职教授游泳，国家级裁判。教龄长达30年，是一位非常认真负责，专注教学的教练。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Mimi</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Rebecca.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t03').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t03" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t03').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Rebecca</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Rebecca.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>原北京体院毕业，有丰富的教学经验，美丽的笑容和亲和力的话语让所有家长和小朋友都分外喜欢，她在玲玲游泳学校教学超过8年了，经验丰富，概念清楚，示范有序。兢兢业业的工作态度是她一直的做人态度。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Rebecca</h3>
+            <p>Head Coach</p>
+        </div>
+
+         <div class="w3-quarter">
+            <img src="./images/coach/Jack.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t04').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t04" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t04').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Jack</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Jack.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>原广东省体校专业队，非常有序的掌握节奏是他的教学特点，严厉的教学方式也获得所有家长的首肯，在超过7年的玲玲游泳学校执教中，他也教授了很多大人班学员。简明扼要的解释让所有大人班学员事半功倍，迅速提高。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Jack</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Winson.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t05').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t05" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t05').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Winson</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Winson.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>前湖北省体院毕业，游泳专业，他的教学宗旨是耐心诚恳，认真负责。下了课还会跟家长们交流孩子的情况，永远的笑容永远的敬业。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Winson</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Jiaqi.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t06').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t06" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t06').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Jiaqi</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Jiaqi.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>原上海体校游泳队队员，他是上课时的魔鬼老师，下课后的可爱大哥哥。他对孩子的要求相当高，一个动作没有达到要求绝对不可过关，这样的严谨才使的玲玲游泳学校的学生们有了扎实的基本功底。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Jiaqi</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Pengcheng.JPG" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t07').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t07" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t07').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Pengcheng</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Pengcheng.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>原河北省体育学院大学毕业，游泳专业，专攻200米混合泳，认真有序，耐心教导，是他的特色。20出头的他有这样的耐心是非常不容易的，对待每一个小朋友都亲切可人，怪不得所有的学生都喜欢叫他大哥哥呢。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Pengcheng</h3>
+            <p>Head Coach</p>
+        </div>
+        
+        <div class="w3-quarter">
+            <img src="./images/coach/Terry.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t08').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t08" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t08').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Terry</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Terry.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>原福建省体校自由泳专业，曾获得青少年全国比赛百米冠军。各个不同的阶段的小朋友都可以成为他的朋友，大孩子般的性格，在教学中认认真真一丝不苟的态度得到了大多数家长的肯定。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Terry</h3>
+            <p>Head Coach</p>
+        </div>
+        
+        <div class="w3-quarter">
+            <img src="./images/coach/Steven.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t09').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t09" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t09').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Steven</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Steven.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>原上海体校游泳队队员，他是上课时的魔鬼老师，下课后的可爱大哥哥。他对孩子的要求相当高，一个动作没有达到要求绝对不可过关，这样的严谨才使的玲玲游泳学校的学生们有了扎实的基本功底。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Steven</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Linda.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t10').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t10" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t10').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Linda</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Linda.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>玲玲游泳学校的小元老，16岁开始在玲玲游泳学校做教练，是所有初级班小朋友的偶像美女老师之一。严谨的教学态度和热情的微笑相结合，是玲玲游泳学校的招牌教练之一。。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Linda</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Helen.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t11').style.display='block'">
+            <!-- Modal -->
+            <div id="t11" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t11').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Helen</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Helen.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>前广东省体校游泳队成员，是玲玲游泳学校的元老之一，灿烂的笑容和认真负责的教学态度是她最有力的招牌。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Helen</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Leo.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t12').style.display='block'">
+            <!-- Modal -->
+            <div id="t12" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t12').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Leo</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Leo.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>原上海市体校游泳队学员，曾经是上海市工人运动比赛冠军，基础教学的严谨和一丝不苟的执行，在他的课程中体现的相当完美。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Leo</h3>
+            <p>Head Coach</p>
+        </div>
+
+        </div>
+    <div class="w3-row"><br>
+        
+        <div class="w3-quarter">
+            <img src="./images/coach/Daniel.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t13').style.display='block'">
+
+
+            <!-- Modal -->
+            <div id="t13" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t13').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Daniel</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Daniel.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>玲玲游泳学校又一个自己培养的老师，从小师从于玲玲游泳学校，曾经拿过NSW的洲际蛙泳冠军。灿烂的笑容和耐心认真的教训态度是让很多小朋友膜拜的帅哥哥之一。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Daniel</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Simon.JPG" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t14').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t14" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t14').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Simon</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Simon.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>前上海市少年体校毕业生，很早就来澳洲的他，在教大人班教授的领域无人能比，严格的基础教育和认真的动作纠正都是他一丝不苟的教学招牌。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Simon</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/DP.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t15').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t15" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t15').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>DP</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/DP.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>原四川省游泳队队员，国家级运动员，澳洲ASCTA协会会员，在LingLing游泳学校执教近4年，教学经验丰富，教学对象涵盖初学者，提高班学员以及成人。诙谐风趣的教学风格加上严谨认真的教学态度，深受孩子与家长的喜爱。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>DP</h3>
+            <p>Head Coach</p>
+        </div>
+        
+        <div class="w3-quarter">
+            <img src="./images/coach/Gavin.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t16').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t16" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t16').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Gavin</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Gavin.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>广州市体校游泳专业运动员，认真负责敬业，娴熟老成的训练模式跟他的年龄不成正比，谦虚负责的教学态度是小朋友和家长们的最爱。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Gavin</h3>
+            <p>Head Coach</p>
+        </div>
+        </div>
+    <div class="w3-row"><br>
+
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Harold.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t17').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t17" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t17').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Harold</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Harold.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>Harold老师因从小自身的体弱多病给父母送去参加游泳训练，一练就是10多年，还在全国大学生运动会拿到冠军。他的训练宗旨就是“坚持下去/不可停止”，严格要求，严谨遵纪，认真抓好基础训练！</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Harold</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Fiona.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t18').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t18" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t18').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Fiona</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Fiona.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>又是一个美女老师，她从香港移民来澳洲多年，在香港就已经从事游泳教学工作，循循善幼的教学是她的最大特点，对于初学的小朋友她有一套独道的方法，可以使得非常怕水和胆小的学生很快地进入学习的状态。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Fiona</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Lora.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t19').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t19" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t19').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Lora</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Lora.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>原天津体校学员，擅长教授初级班的她一直有效的把东方和西方的训练系统相结合，以便达到教学点的最适度。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Lora</h3>
+            <p>Head Coach</p>
+        </div>
+        
+        <div class="w3-quarter">
+            <img src="./images/coach/Min.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t20').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t20" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t20').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Min</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Min.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>原广东体院毕业的阿敏老师曾经是第五届全运会的广东省代表队选手之一，主攻自由泳。认真负责，松弛有度，最有特色的就是她的声音，响彻整个游泳池。每次教课完毕她都是喉咙哑掉咯。所有的家长和学生都非常喜欢她呢。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Min</h3>
+            <p>Head Coach</p>
+        </div>
+        </div>
+    <div class="w3-row"><br>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Ben.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t21').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t21" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t21').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Ben</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Ben.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>南京体育学院高才生,游泳专业，100米蛙泳曾经的全国记录保持者。ben老师是个1小时教学过程中永远保持微笑和热忱的老师，耐心的解释和循循善诱的引导，使得每个学生都崇拜他的很。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Ben</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Jayden.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t22').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t22" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t22').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Jayden</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Jayden.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>福建省体育学院毕业，游泳专业，大帅哥一枚，福建省福州市100蝶泳的冠军，认真的工作态度和专业的指导能力和他的颜值绝对相匹配。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Jayden</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Melissa.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t23').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t23" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t23').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Melissa</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Melissa.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>原天津市游泳体校学员，从小跟着做专职游泳教练的妈妈成长，非常亲和力的笑容和最有亲和力的交流，是所有初级班小朋友的最爱。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Melissa</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Kevin.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t24').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t24" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t24').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Kevin</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Kevin.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>上海市徐汇区体校专业训练8年，是玲玲游泳学校的“彭于晏”，也是我们学校最受欢迎的帅哥教练之一。不苟言笑的教学模式和紧凑有序的细心教学，是家长和学生最喜欢的明星人物.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Kevin</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Chapman.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t25').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t25" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t25').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Chapman</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Chapman.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>澳洲NSW的州冠军，从小开始在澳洲本土接受训练，一直训练到大学校队，对游泳的热忱和他对教学的热忱对等，喜欢小朋友的他脸上永远都会有最阳光的微笑。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Chapman</h3>
+            <p>Head Coach</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./images/coach/Joe.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t26').style.display='block'">
+            
+
+            <!-- Modal -->
+            <div id="t26" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t26').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Joe</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Joe.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>广州市体校游泳专业运动员，认认真真的教学态度，一丝不苟的教学模式，中西结合的教学程式，把玲玲游泳学校的课程演示发挥的淋漓尽致。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Joe</h3>
+            <p>Head Coach</p>
+        </div>
+        
+        <div class="w3-quarter">
+            <img src="./images/coach/Connor.JPG" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t27').style.display='block'">
+            <!-- Modal -->
+            <div id="t27" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t27').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Connor</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Connor.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>原天津游泳队队员，不苟言笑的他，认真负责，对每次课程的执行度一丝不苟，专业精神可嘉。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Connor</h3>
+            <p>Head Coach</p>
+        </div>
+        
+        <div class="w3-quarter">
+            <img src="./images/coach/Terrence.JPG" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" onclick="document.getElementById('t28').style.display='block'">
+            <!-- Modal -->
+            <div id="t28" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('t28').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h3>Terrence</h3>
+
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-row">
+                            <div class="w3-third w3-container">
+                                <img src="./images/coach/Terrence.jpg" alt="Boss" style="width:45%">
+                            </div>
+                            <div class="w3-twothird w3-container w3-center">
+                                <p>从小在玲玲游泳学校学习游泳，可以说是玲玲游泳学校自己培养的教练，我们自己的接班人。澳洲长大的ABC有着男孩子少有的细心和认真，每次课程都会做最好的demo，特别认真学习普通话来教授我们刚刚从中国来的小朋友们。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Terrence</h3>
+            <p>Head Coach</p>
+        </div>
+
+    </div>
+</div>
+
+    <div class="w3-container w3-row w3-padding-64 w3-theme-l1 " id="reward">
+    <div class="w3-half w3-container w3-center">
+        <h2>Rewards</h2>
+        <!-- Image slide -->
+        <div class="w3-content w3-display-container">
+            <img class="rSlides" src="./images/reward/1.JPG" style="width:50%; margin-left:25%">
+            <img class="rSlides" src="./images/reward/2.JPG" style="width:50%; margin-left:25%">
+            <img class="rSlides" src="./images/reward/3.JPG" style="width:50%; margin-left:25%">
+            <img class="rSlides" src="./images/reward/4.JPG" style="width:50%; margin-left:25%">
+
+            <button class="w3-button w3-black w3-display-left" onclick="RplusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="RplusDivs(1)">&#10095;</button>
+            <script>
+                var slideIndex = 1;
+                RshowDivs(slideIndex);
+
+                function RplusDivs(n) {
+                    RshowDivs(slideIndex += n);
+                }
+
+                function RshowDivs(n) {
+                    var i;
+                    var y = document.getElementsByClassName("rSlides");
+
+                    if (n > y.length) {slideIndex = 1}
+                    if (n < 1) {slideIndex = y.length}
+                    for (i = 0; i < y.length; i++) {
+                        y[i].style.display = "none";
+                    }
+                    y[slideIndex-1].style.display = "block";
+                }
+            </script>
+        </div>
+
+
+
+    </div>
+    <div class="w3-half w3-container w3-center">
+        <h2>Teaching</h2>
+        <!-- Image slide -->
+        <div class="w3-content w3-display-container">
+            <img class="tSlides" src="./images/style/01.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/02.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/03.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/04.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/05.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/06.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/07.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/1.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/2.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/3.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/4.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/5.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/6.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/7.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/8.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/9.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/10.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/11.jpg" style="width:100%"> 
+            <img class="tSlides" src="./images/style/12.jpg" style="width:100%"> 
+            <img class="tSlides" src="./images/style/13.jpg" style="width:100%"> 
+            <img class="tSlides" src="./images/style/14.jpg" style="width:100%"> 
+            <img class="tSlides" src="./images/style/15.jpg" style="width:100%"> 
+            <img class="tSlides" src="./images/style/16.jpg" style="width:100%"> 
+            <img class="tSlides" src="./images/style/17.jpg" style="width:100%"> 
+            <img class="tSlides" src="./images/style/18.jpg" style="width:100%"> 
+            <img class="tSlides" src="./images/style/19.jpg" style="width:100%"> 
+            <img class="tSlides" src="./images/style/20.jpg" style="width:100%"> 
+            <img class="tSlides" src="./images/style/21.jpg" style="width:100%"> 
+            <img class="tSlides" src="./images/style/22.jpg" style="width:100%"> 
+            <img class="tSlides" src="./images/style/23.jpg" style="width:100%"> 
+            <img class="tSlides" src="./images/style/24.jpg" style="width:100%"> 
+            <img class="tSlides" src="./images/style/25.jpg" style="width:100%"> 
+            <img class="tSlides" src="./images/style/26.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/27.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/28.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/29.jpg" style="width:100%">
+            <img class="tSlides" src="./images/style/30.jpg" style="width:100%">
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("tSlides");
+                var y = document.getElementsByClassName("rSlides");
+
+                if (n > x.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = x.length}
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[slideIndex-1].style.display = "block";
+            }
+        </script>
+    </div>
+    </div>
+
+<!-- Location Row -->
+<div class="w3-container w3-padding-64 w3-theme-l5 w3-center" id="work">
+    <h2>Location</h2>
+    <div class="w3-row">
+        <div class="w3-third">
+            <div class="w3-card-2 w3-white">
+                <img src="images/location/Birrong.jpg" alt="Birrong" style="width:100%;padding-bottom: 10%">
+                <div class="w3-container">
+                    <h4>Birrong Leisure Centre</h4>
+                    <p>Wellington Rd, Birrong NSW 2143</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="w3-third">
+            <div class="w3-card-2 w3-white">
+                <img src="images/location/Bexley.JPG" alt="Bexley" style="width:100%;padding-bottom: 10%">
+                <div class="w3-container">
+                    <h4>Bexley Aquatic Centre</h4>
+                    <p>98C Preddys Rd, Bexley North NSW 2207</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="w3-third">
+            <div class="w3-card-2 w3-white">
+                <img src="images/location/Hurstville.jpg" alt="Hurstville" style="width:100%">
+                <div class="w3-container">
+                    <h4>Hurstville Aquatic Centre</h4>
+                    <p>King Georges Rd & Forest Rd, Penshurst NSW 2222</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w3-row">
+        <div class="w3-half">
+            <div class="w3-card-2 w3-white">
+                <img src="images/location/Lane.jpg" alt="Lane" style="width:100%; padding-bottom:8%">
+                <div class="w3-container">
+                    <h4>Lane Cove Aquatic Leisure Centre</h4>
+                    <p>2 Little St, Lane Cove NSW 2066</p>
+                </div>
+            </div>
+        </div>
+        <div class="w3-half">
+            <div class="w3-card-2 w3-white">
+                <img src="images/location/Sydney.jpg" alt="Sydney" style="width:100%">
+                <div class="w3-container">
+                    <h4>Sydney Olympic Park Aquatic Centre</h4>
+                    <p>Olympic Blvd, Sydney Olympic Park NSW 2127</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Pricing Row -->
+
+<div class="w3-row-padding w3-center w3-padding-64" id="pricing">
+    <h2>PRICING</h2>
+    <p>每学期10堂课 学费及门票详情如下:</p><br>
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Birrong Leisure Centre</p>
+            </li>
+            <li class="w3-padding-16"><b>$290</b> ／学期</li>
+            <li class="w3-padding-16">Free Parking</li>
+            <li class="w3-padding-16"><b>门票：</b> 免学生及一位家长</li>
+            <li class="w3-padding-16"><b>试课需 支付一节课 </b> 门票自理</li>
+            <li class="w3-padding-16">
+                <h2 class="w3-wide"><i class="fa fa-usd"></i> 29</h2>
+                <span class="w3-opacity">每节</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Bexley Aquatic Centre</p>
+            </li>
+            <li class="w3-padding-16"><b>$260</b> ／学期</li>
+            <li class="w3-padding-16">Free Parking</li>
+            <li class="w3-padding-16"><b>门票：</b> $96/20次(家长免费)</li>
+            <li class="w3-padding-16"><b>试课需支付一节课 </b> 门票自理</li>
+            <li class="w3-padding-16">
+                <h2 class="w3-wide"><i class="fa fa-usd"></i> 26</h2>
+                <span class="w3-opacity">每节</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Hurstville Aquatic Centre</p>
+            </li>
+            <li class="w3-padding-16"><b>$260</b> ／学期</li>
+            <li class="w3-padding-16">Free Parking</li>
+            <li class="w3-padding-16"><b>门票：</b> $110/20次（家长免费）</li>
+            <li class="w3-padding-16"><b>试课需支付一节课</b> 门票自理</li>
+            <li class="w3-padding-16">
+                <h2 class="w3-wide"><i class="fa fa-usd"></i> 26</h2>
+                <span class="w3-opacity">每节</span>
+            </li>
+        </ul>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Lane Cove Aquatic Centre</p>
+            </li>
+            <li class="w3-padding-16"><b>$260</b> ／学期</li>
+            <li class="w3-padding-16">Free Parking</li>
+            <li class="w3-padding-16"><b>门票：</b> $115/20次（家长免费）</li>
+            <li class="w3-padding-16"><b>试课需支付一节课</b> 门票自理</li>
+            <li class="w3-padding-16">
+                <h2 class="w3-wide"><i class="fa fa-usd"></i> 26</h2>
+                <span class="w3-opacity">每节</span>
+            </li>
+        </ul>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Olympic Park Aquatic Centre</p>
+            </li>
+            <li class="w3-padding-16"><b>$260</b> ／学期</li>
+            <li class="w3-padding-16"><b>4h </b>Free Parking</li>
+            <li class="w3-padding-16"><b>门票：</b> $4/人</li>
+            <li class="w3-padding-16"><b>试课需支付一节课</b> 门票自理</li>
+            <li class="w3-padding-16">
+                <h2 class="w3-wide"><i class="fa fa-usd"></i> 26</h2>
+                <span class="w3-opacity">每节</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--Interview-->
+<div class="w3-container w3-padding-64 w3-theme-l5 w3-center" id="interview">
+    <h2>Interview</h2>
+    <div class="w3-row">
+        <div class="w3-content w3-display-container">
+            <div class="w3-container interSlides">
+                <h3><a href="https://v.qq.com/x/page/x0318dj784n.html">TVB奥运特辑专访澳洲最大华人游泳学校－玲玲游泳学校</a></h3>
+                <br>
+                <iframe style="width:50%;" frameborder="0" width="640" height="450" src="https://v.qq.com/iframe/player.html?vid=x0318dj784n&tiny=0&auto=0" allowfullscreen></iframe>
+            </div>
+            <div class="w3-container interSlides">
+                <h3><a href="https://v.qq.com/iframe/player.html?vid=x0318dj784n&tiny=0&auto=0">玲玲游泳学校</a></h3>
+                <br>
+                <iframe style="width:50%;" frameborder="0" width="640" height="450" src="https://v.qq.com/iframe/player.html?vid=x0318dj784n&tiny=0&auto=0" allowfullscreen></iframe>
+            </div>
+            <button class="w3-button w3-black w3-display-left" onclick="interplusDivsR(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="interplusDivsR(1)">&#10095;</button>
+        </div>
+
+        <script>
+            var slideIndex = 1;
+            showDivsR(slideIndex);
+
+            function interplusDivsR(n) {
+                showDivsR(slideIndex += n);
+            }
+
+            function showDivsR(n) {
+                var i;
+                var x = document.getElementsByClassName("interSlides");
+                if (n > x.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = x.length}
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[slideIndex-1].style.display = "block";
+            }
+        </script>
+    </div>
+
+
+</div>
+<!-- Program -->
+
+<div class="w3-row-padding w3-center w3-padding-64" id="Program">
+    <h2>Program</h2>
+    <div class="w3-row">
+        <div class="w3">
+            <div class="w3-card-2 w3-white">
+                <div class="w3-container">
+                    <h4>6-level Swimming Program</h4>
+                    <br>
+                </div>
+                <img src="images/Swim_Program.png" alt="Swim_program" style="width:100%;padding-bottom: 10%">
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!--FAQ Container-->
+<div class="w3-row-padding w3-center w3-padding-64 w3-theme-l5" id="faq">
+    <h2>Q & A</h2>
+    <p>Search for a name in the input field.</p>
+
+    <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="myInput" onkeyup="myFunction()">
+
+    <table class="w3-table-all w3-margin-top" id="myTable">
+        <tr>
+            <th style="width:100%;">关于游泳的注意事项常见问题</th>
+        </tr>
+        <tr>
+            <td onclick="document.getElementById('q01').style.display='block'" class="w3-hover-grey">Q：什么年龄段最适合开始游泳培训？</td>
+            <!-- Modal -->
+            <div id="q01" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：什么年龄段最适合开始游泳培训？</h4>
+
+                    </header>
+                    <div class="w3-container">
+
+                        <p>A：2岁半到3岁开始游泳培训比较适合，因为这个时候的小朋友基本明白了大人的指示并能够进行基本对话，
+                            所以会对教练的指示和动作进行反馈并加以模仿。
+                            另外这个年龄阶段的小朋友还没有真正意义上对水产生惧怕，但随着小朋友年龄的增长，这种恐惧心理会随之增加。</p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <td onclick="document.getElementById('q02').style.display='block'" class="w3-hover-grey">Q：作为家长什么时候带领小朋友下水最好？</td>
+            <!-- Modal -->
+            <div id="q02" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q02').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：作为家长什么时候带领小朋友下水最好？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>A：最好的时间段就是小朋友学习走路的阶段，那个时候的小朋友比较活泼，喜欢走动，在水中走动阻力相对大于陆地，这样一方面增进小朋友与水的交流，使其不惧怕水；另一方面增加小朋友腿力，让其尽快学会走路。</p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <td onclick="document.getElementById('q03').style.display='block'" class="w3-hover-grey">Q：游泳前进餐需注意什么？</td>
+            <!-- Modal -->
+            <div id="q03" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q03').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：游泳前进餐需注意什么？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：游泳前半小时不可以吃产气及不易消化的食物，如米饭，牛奶等；前几种情况都会引起小朋友的呕吐及不舒适，建议在游泳前吃面条/面包等易消化食物，且不可吃得过饱。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <td onclick="document.getElementById('q04').style.display='block'" class="w3-hover-grey">Q：从什么游泳姿势开始教？</td>
+            <!-- Modal -->
+            <div id="q04" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q04').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：从什么游泳姿势开始教？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A: 澳大利亚游泳从自由泳和仰泳的交替开始教课，因为自由泳和仰泳的水上姿势是最接近人体在水中的放松平衡状态，这样的教课方式可使小朋友以最放松的状态从学习水中吐气开始。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <td onclick="document.getElementById('q05').style.display='block'" class="w3-hover-grey">Q：需要带些什么物品来上课？
+            </td>
+            <!-- Modal -->
+            <div id="q05" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q05').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：需要带些什么物品来上课？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：泳衣、洗浴用品、泳镜、泳帽（对于第一次报名付完整个学期学费的小朋友赠送印有lingling swim school logo的Speedo泳帽一个）。                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <td onclick="document.getElementById('q06').style.display='block'" class="w3-hover-grey">Q：耳朵进水怎么办？</td>
+            <!-- Modal -->
+            <div id="q06" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q06').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：耳朵进水怎么办？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：耳朵进水是游泳中的常见问题，可持续用手掌压迫耳屏或用手指牵拉耳廓，或反复做张口动作，使得外耳道上下左右不停活动或改变水屏障稳定性和压力的平稳，使水向外从外耳道流出。或者简单的单脚跳跃，使有水进入的那边耳朵的水直接流出。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+                <tr>
+            <th style="width:100%;">关于首次报名、缴学费、请假、补课</th>
+        </tr>
+            <td onclick="document.getElementById('q07').style.display='block'" class="w3-hover-grey">Q：上课时间可以更改吗？上课地点可以中途更改吗？</td>
+            <!-- Modal -->
+            <div id="q07" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q07').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：上课时间可以更改吗？上课地点可以中途更改吗？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：上课地点及时间不可随意更改，但是补课或者特殊情况下可以有所变动，需提前告知。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <td onclick="document.getElementById('q08').style.display='block'" class="w3-hover-grey">Q：怎样报名？</td>
+
+            <!-- Modal -->
+            <div id="q08" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q08').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：怎样报名？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：首次报名的学员，请在网页下方报名页面填写您或孩子的相关资料，然后通过银行账户支付第一堂课的费用（手机银行app中，选择电话号码转账，0415580183），然后我们校长会第一时间与您联系。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+            <td onclick="document.getElementById('q09').style.display='block'" class="w3-hover-grey">Q：可以免费试课吗？</td>
+            <!-- Modal -->
+            <div id="q09" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q09').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：可以免费试课吗？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：不可以，因为我们不能占用其他缴了学费的学生的时间。但是您可以提前支付一堂课的费用，来感受我们的课程，具体费用根据上课地方略微不同。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+            <td onclick="document.getElementById('q10').style.display='block'" class="w3-hover-grey">Q：回国、生病、参加考试等情况怎么办，可以补课吗？</td>
+            <!-- Modal -->
+            <div id="q10" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q10').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：回国、生病、参加考试等情况怎么办，可以补课吗？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>1.请假需要提前24小时告知,回国、病假、事假需提前一天告知。临时请假、过时请假、未请假均不予补课。
+<div>2.补课不等于延后。
+如果学员有生病或者突发情况不能上课，我们给予补课的机会。在接下来的两周中，每次正常课时结束后再多上半个小时，或者接下来一周中再多上一个小时。
+</div>
+<div>3.补课不等于家长自行安排
+补课时间必须由校长或者接待员安排，家长不能自行与教练协商补课。如果补课人员过多，我们会为您安排其他时间，不保证是同一教练授课。
+</div>
+<div>4.补课限制
+一个学期10堂课，最多2次补课机会。另外，若超过3次以上缺席，学员的位置将不予以保留。
+</div>
+<div>5.如果您的孩子不需要补课，我们尊重您的意见。
+</div>
+<div>6.补课只能在已经缴费的学期内完成，不能延期或者退款。如果您下学期不再参加，我们不额外提供补课机会。
+</div>
+<div>7.如果出现由于您的孩子情绪低落或哭闹等情况，并没有顺利配合教练完成课程，我们不予以补课。
+</div>
+<div>8.所有预收的学费一律不予以退款，谢谢配合。
+</div>
+<div>9.请假方式。可致电校长（0415580183）；或发送短信微信（微信号：deling_linda）
+不接受Email请假。
+</div>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+            <td onclick="document.getElementById('q11').style.display='block'" class="w3-hover-grey">Q：可以上一次课教一次钱吗？中途停止可以退钱吗？没有补完的课可以退钱吗？
+</td>
+
+            <!-- Modal -->
+            <div id="q11" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q11').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：可以上一次课教一次钱吗？中途停止可以退钱吗？没有补完的课可以退钱吗？
+</h4>
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：不可以。一次性缴完一个学期十堂课的学费（如果中途插班，只用支付剩余次数即可）。抱歉学费一律不退，没有补完的课程也不会退钱，也不能延至下个学期，或者抵扣下个学期的课程费用。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+            <td onclick="document.getElementById('q12').style.display='block'" class="w3-hover-grey">Q：你们的收费方式？接受POS机刷卡吗？</td>
+            <!-- Modal -->
+            <div id="q12" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q12').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：你们的收费方式？接受POS机刷卡吗？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：我们主要接受现金支付，也可以通过银行转账（转账时请注明学生姓名，并截图发送短信给校长）。抱歉我们不接受POS机刷卡或者信用卡支付。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+            <td onclick="document.getElementById('q13').style.display='block'" class="w3-hover-grey">Q：每个学期的缴费时间？</td>
+            <!-- Modal -->
+            <div id="q13" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q13').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：每个学期的缴费时间？</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：我们会在每个学期最后两堂课提前收取下个学期的课程费用，因为我们必须提前确定每个班级的学生人数并安排相应的老师。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <th style="width:100%;">关于老师、课程、放假等问题</th>
+        </tr>
+            <td onclick="document.getElementById('q14').style.display='block'" class="w3-hover-grey">Q：学校老师都是有资历的吗？
+</td>
+            <!-- Modal -->
+            <div id="q14" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q14').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：学校老师都是有资历的吗？
+</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：我们的老师都是有多年游泳训练经历的，上岗之前通过了正式考核及培训，保证您的小孩得到正规专业的指导。
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+                    <td onclick="document.getElementById('q15').style.display='block'" class="w3-hover-grey">Q：你们的教练能够提供英文授课吗？
+</td>
+            <!-- Modal -->
+            <div id="q15" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q15').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：你们的教练能够提供英文授课吗？
+</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：我们不仅有双语教学的教练，其中也有会上海话及广东话等地方语言的教练。
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+            <td onclick="document.getElementById('q16').style.display='block'" class="w3-hover-grey">Q：小孩都是固定一个老师授课吗？
+</td>
+            <!-- Modal -->
+            <div id="q16" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q16').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：小孩都是固定一个老师授课吗？
+</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：同个时段同个水平的班级老师是固定的，如果升到高班会是不同的老师。另外如果老师有事请假，我们会安排其他的老师代课，请各位家长谅解。
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+            <td onclick="document.getElementById('q17').style.display='block'" class="w3-hover-grey">Q：学校能出具资历证书吗？
+</td>
+            <!-- Modal -->
+            <div id="q17" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q17').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：学校能出具资历证书吗？
+</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：我们可以给通过考核的学生授予相应证书。
+
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+            <td onclick="document.getElementById('q18').style.display='block'" class="w3-hover-grey">Q：课程有什么具体的进度吗？
+</td>
+            <!-- Modal -->
+            <div id="q18" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q18').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：课程有什么具体的进度吗？
+</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：详见Program表
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+            <td onclick="document.getElementById('q19').style.display='block'" class="w3-hover-grey">Q：你们有一对一私教课吗？
+</td>
+            <!-- Modal -->
+            <div id="q19" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q19').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：你们有一对一私教课吗？
+</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：通常情况下是没有的，如果您的孩子需要特殊指导，请直接联系我们的校长。
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+            <td onclick="document.getElementById('q20').style.display='block'" class="w3-hover-grey">Q：你们的放假时间和学校同步吗？
+</td>
+            <!-- Modal -->
+            <div id="q20" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q20').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：你们的放假时间和学校同步吗？
+</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：我们和学校的放假时间略有不同，我们会在每个学期收费的收据上提前写明这个学期时间段内的放假安排，请家长注意查看。
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+            <td onclick="document.getElementById('q21').style.display='block'" class="w3-hover-grey">Q：成人可以来学吗？ 价格会贵点吗？
+</td>
+            <!-- Modal -->
+            <div id="q21" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container">
+                        <span onclick="document.getElementById('q21').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Q：成人可以来学吗？ 价格会贵点吗？
+</h4>
+
+                    </header>
+                    <div class="w3-container">
+                        <p>
+                            A：我们欢迎各位学生家长来参与我们的成人游泳班，家长和小朋友一起学习进步是给孩子最好的榜样！而且我们成人班收费价格和小朋友的一致，有专门的老师负责授课。
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+    </table>
+</div>
+
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+</div>
+<!-- Contact Container -->
+<div class="w3-container w3-padding-64 w3-theme-l4" id="contact">
+    <div class="w3-row">
+        <div class="w3-col m5">
+            <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact & Enroll</span></div>
+            <h3>校长联系方式</h3>
+            <p><b>Daisy Xie</b> </p>
+            <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>   Sydney, Australia</p>
+            <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +61 415580183</p>
+            <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i> deling_linda@hotmail.com</p>
+            <p class="popup" onclick="myFunction()"><i class="fa fa-weixin w3-text-teal w3-xlarge " > </i> deling_linda
+                <span class="popuptext" id="myPopup"><img src="./images/weixin.png" style="width:100%"></span></p>
+
+            <script>
+                // When the user clicks on div, open the popup
+                function myFunction() {
+                    var popup = document.getElementById("myPopup");
+                    popup.classList.toggle("show");
+                }
+            </script>
+            <br>
+            <img src="./images/微信二维码.png" alt="Barcode" style="width:20%" class="w3-square">
+
+        </div>
+        <div class="w3-col m7">
+            <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
+                <div class="w3-section">
+                    <label>学员姓名</label>
+                    <input class="w3-input" type="text" name="Name" required>
+                </div>
+                <div class="w3-section">
+                    <label>家长姓名</label>
+                    <input class="w3-input" type="text" name="pName" required>
+                </div>
+                <div class="w3-section">
+                    <label>家长电话</label>
+                    <input class="w3-input" type="text" name="pPhone" required>
+                </div>
+                <div class="w3-section">
+                    <label>微信</label>
+                    <input class="w3-input" type="text" name="Weixin" required>
+                </div>
+                <div class="w3-section">
+                    <label>是否为初学者及大致水平</label><br>
+                    <input class="w3-input" type="text" name="Beginnger" required>
+                    </div>
+                <div class="w3-section">
+                    <label>校区选择</label><br>
+
+                    <input class="w3-check" type="checkbox" >
+                    <label>Birrong</label>
+                    
+
+                    <input class="w3-check" type="checkbox" >
+                    <label>Bexley</label>
+                    
+
+                    <input class="w3-check" type="checkbox" >
+                    <label>Hurstville</label>
+                    
+                    <input class="w3-check" type="checkbox" >
+                    <label>Olympic</label>
+                    
+
+                    <input class="w3-check" type="checkbox" >
+                    <label>Lane Cove</label>
+                    
+                </div>
+
+                <button type="submit" class="w3-button w3-left w3-theme">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Google Maps -->
+<!--<div id="googleMap" style="width:100%;height:420px;"></div>-->
+<!--<script>-->
+    <!--function myMap()-->
+    <!--{-->
+        <!--myCenter=new google.maps.LatLng(41.878114, -87.629798);-->
+        <!--var mapOptions= {-->
+            <!--center:myCenter,-->
+            <!--zoom:12, scrollwheel: false, draggable: false,-->
+            <!--mapTypeId:google.maps.MapTypeId.ROADMAP-->
+        <!--};-->
+        <!--var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);-->
+
+        <!--var marker = new google.maps.Marker({-->
+            <!--position: myCenter,-->
+        <!--});-->
+        <!--marker.setMap(map);-->
+    <!--}-->
+<!--</script>-->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>-->
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+    <h4>Follow Us</h4>
+    <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+    <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+    <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+    <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+    <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">LING LING SWIM SCHOOL</a></p>
+
+    <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+        <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
+        <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+    </div>
+</footer>
+
+<script>
+    // Script for side navigation
+    function w3_open() {
+        var x = document.getElementById("mySidebar");
+        x.style.width = "300px";
+        x.style.paddingTop = "10%";
+        x.style.display = "block";
+    }
+
+    // Close side navigation
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+
+    // Used to toggle the menu on smaller screens when clicking on the menu button
+    function openNav() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+
+</script>
+
+<!--First slides function-->
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("fSlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 3000); // Change image every 2 seconds
+    }
+</script>
+
+</body>
+</html>

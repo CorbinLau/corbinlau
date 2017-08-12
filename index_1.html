@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<title>linglingswimschool</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./style/w3.css">
+<link rel="stylesheet" href="./style/w3-theme-blue.css">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  .mySlides {display:none}
+  .w3-left, .w3-right, .w3-badge {cursor:pointer}
+  .w3-badge {height:13px;width:13px;padding:0}
+</style>
+<body id="myPage">
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Logo</a>
+  <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
+  <a href="#location" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Location</a>
+  <a href="#register" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Register</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+   <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">More</a>
+
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
+ </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="#team" class="w3-bar-item w3-button">Team</a>
+    <a href="#location" class="w3-bar-item w3-button">Location</a>
+    <a href="#register" class="w3-bar-item w3-button">Register</a>
+    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    <a href="#" class="w3-bar-item w3-button">Search</a>
+  </div>
+</div>
+
+<!-- Image Header -->
+<!--<div class="w3-display-container w3-animate-opacity">-->
+  <!--<img src="./images/style/1.JPG" alt="kids" style="width:100%;min-height:350px;max-height:700px;">-->
+<!--</div>-->
+
+<div class="w3-content w3-display-container w3-animate-opacity" style="max-width:800px">
+  <img class="mySlides" src="./images/style/1.JPG" style="width:100%">
+  <img class="mySlides" src="./images/style/2.JPG" style="width:100%">
+  <img class="mySlides" src="./images/style/3.JPG" style="width:100%">
+  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+  </div>
+</div>
+<script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function currentDiv(n) {
+    showDivs(slideIndex = n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" w3-white", "");
+    }
+    x[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " w3-white";
+  }
+</script>
+<script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function currentDiv(n) {
+    showDivs(slideIndex = n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" w3-white", "");
+    }
+    x[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " w3-white";
+  }
+</script>
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+<h2>OUR TEAM</h2>
+<h3>我们拥有强大的教练团队</h3>
+
+<div class="w3-row"><br>
+
+<div class="w3-quarter">
+  <img src="./images/coach/Daisy.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Daisy</h3>
+  <p>Chief Coach</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="./images/coach/Mimi.JPG" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Mimi</h3>
+  <p>Head Coach</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="./images/coach/Rebecca.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Rebecca</h3>
+  <p>Head Coach</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="./images/coach/Jiaqi.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Jiaqi</h3>
+  <p>Head Coach</p>
+</div>
+
+  <div class="w3-quarter">
+    <img src="./images/coach/Ben.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3>Ben</h3>
+    <p>Head Coach</p>
+  </div>
+
+  <div class="w3-quarter">
+    <img src="./images/coach/Jayden.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3>Jayden</h3>
+    <p>Head Coach</p>
+  </div>
+
+  <div class="w3-quarter">
+    <img src="./images/coach/Jack.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3>Jack</h3>
+    <p>Head Coach</p>
+  </div>
+
+  <div class="w3-quarter">
+    <img src="./images/coach/Melissa.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3>Melissa</h3>
+    <p>Head Coach</p>
+  </div>
+
+  <div class="w3-quarter">
+    <img src="./images/coach/Kevin.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3>Kevin</h3>
+    <p>Head Coach</p>
+  </div>
+
+  <div class="w3-quarter">
+    <img src="./images/coach/Chapman.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3>Chapman</h3>
+    <p>Head Coach</p>
+  </div>
+
+  <div class="w3-quarter">
+    <img src="./images/coach/Joe.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3>Joe</h3>
+    <p>Head Coach</p>
+  </div>
+
+  <div class="w3-quarter">
+    <img src="./images/coach/Gavin.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3>Gavin</h3>
+    <p>Head Coach</p>
+  </div>
+
+</div>
+</div>
+
+<!-- Work Row -->
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="location">
+
+<div class="w3-quarter">
+<h2>Our Work</h2>
+  <p>玲玲游泳学校创办于2002年的10月18日，它是全悉尼唯一一所由中国人一手创办的游泳学校。它从初期的2个教练员到现在的十多个教练员，玲玲游泳学校走过了一段很艰辛的路，玲玲游泳学校所有的教练员都是前中国国家游泳队或地方队的专业游泳运动员，他们用他们的丰富经验和满怀的爱心在培育着孩子们。 玲玲游泳学校是澳洲游泳协会承认的优秀游泳学校之一</p>
+</div>
+
+<div class="w3-quarter">
+<div class="w3-card-2 w3-white">
+  <img src="./images/reward/1.jpg" alt="Vernazza" style="width:100%">
+  <div class="w3-container">
+  <h3>Student 1</h3>
+  <h4>Title</h4>
+  </div>
+  </div>
+</div>
+
+<div class="w3-quarter">
+<div class="w3-card-2 w3-white">
+  <img src="./images/reward/2.jpg" alt="Cinque Terre" style="width:100%">
+  <div class="w3-container">
+  <h3>Student 2</h3>
+  <h4>Title</h4>
+
+  </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Pricing Row -->
+<div class="w3-row-padding w3-center w3-padding-64" id="register">
+    <h2>PRICING</h2>
+    <p>Choose a pricing plan that fits your needs.</p><br>
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge">Basic</p>
+        </li>
+        <li class="w3-padding-16"><b>10GB</b> Storage</li>
+        <li class="w3-padding-16"><b>10</b> Emails</li>
+        <li class="w3-padding-16"><b>10</b> Domains</li>
+        <li class="w3-padding-16"><b>Endless</b> Support</li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide"><i class="fa fa-usd"></i> 10</h2>
+          <span class="w3-opacity">per month</span>
+        </li>
+        <li class="w3-theme-l5 w3-padding-24">
+          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme-l2">
+          <p class="w3-xlarge">Pro</p>
+        </li>
+        <li class="w3-padding-16"><b>25GB</b> Storage</li>
+        <li class="w3-padding-16"><b>25</b> Emails</li>
+        <li class="w3-padding-16"><b>25</b> Domains</li>
+        <li class="w3-padding-16"><b>Endless</b> Support</li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide"><i class="fa fa-usd"></i> 25</h2>
+          <span class="w3-opacity">per month</span>
+        </li>
+        <li class="w3-theme-l5 w3-padding-24">
+          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge">Premium</p>
+        </li>
+        <li class="w3-padding-16"><b>50GB</b> Storage</li>
+        <li class="w3-padding-16"><b>50</b> Emails</li>
+        <li class="w3-padding-16"><b>50</b> Domains</li>
+        <li class="w3-padding-16"><b>Endless</b> Support</li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide"><i class="fa fa-usd"></i> 50</h2>
+          <span class="w3-opacity">per month</span>
+        </li>
+        <li class="w3-theme-l5 w3-padding-24">
+          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+        </li>
+      </ul>
+    </div>
+</div>
+
+<!-- Contact Container -->
+<div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+  <div class="w3-row">
+    <div class="w3-col m5">
+    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
+      <h3>Address</h3>
+      <p>LING LING SWIM SCHOOL</p>
+      <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>   Lidcombe, Hurstville, Lane Cove</p>
+      <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  (02) 96837058</p>
+      <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  0415580183</p>
+      <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i> lingling@linglingswimschool.com.au</p>
+    </div>
+    <div class="w3-col m7">
+      <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
+      <div class="w3-section">      
+        <label>Name</label>
+        <input class="w3-input" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">      
+        <label>Email</label>
+        <input class="w3-input" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">      
+        <label>Message</label>
+        <input class="w3-input" type="text" name="Message" required>
+      </div>  
+      <input class="w3-check" type="checkbox" checked name="Like">
+      <label>I Like it!</label>
+      <button type="submit" class="w3-button w3-right w3-theme">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Google Maps -->
+<div id="googleMap" style="width:100%;height:420px;"></div>
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng(-33.850570, 151.065219);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8woeSj4U_57AWbxdTqPR32lxucbdgbRY"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+  <h4>Follow Us</h4>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+  <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">LING LING SWIM SCHOOL</a></p>
+
+  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
+    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+
+<script>
+// Script for side navigation
+function w3_open() {
+    var x = document.getElementById("mySidebar");
+    x.style.width = "300px";
+    x.style.paddingTop = "10%";
+    x.style.display = "block";
+}
+
+// Close side navigation
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
